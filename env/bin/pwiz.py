@@ -1,4 +1,4 @@
-#!/Users/Raghav's macbook /Desktop/documents/college/junior/5th semester/comp 371/project/env/bin/python3
+#!/Users/Raghav's macbook /Desktop/documents/college/junior/5th semester/comp 371/project/env/bin/python
 
 import datetime
 import os
