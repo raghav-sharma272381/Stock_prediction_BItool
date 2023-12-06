@@ -6,7 +6,12 @@ from prophet import Prophet
 from prophet.plot import plot_plotly
 from plotly import graph_objs as go 
 
-#Agam and Ais
+
+# refrences for external apis
+
+# Prophet Development Team. (2023, December 5). Prophet - Automatic Forecasting Procedure. Facebook Open Source. https://facebook.github.io/prophet/
+
+# Yahoo Finance. (2022, December 5). Yahoo Finance - Business Finance, Stock Market, Quotes, News. Yahoo Finance. https://finance.yahoo.com/
 
 START = "2015-01-01"
 TODAY = date.today().strftime("%Y-%m-%d")
@@ -19,7 +24,8 @@ selected_stocks = st.selectbox("Select dataset for prediction", stocks)
 n_years = st.slider("Years of predictions:", 1, 4)
 period = n_years * 365
 
-
+#Alisha and Sumeet
+# loading data from yahoo finanace 
 def load_data(ticker):
     data = yf.download(ticker, START, TODAY)
     data.reset_index(inplace=True)
@@ -33,7 +39,10 @@ data_load_state.text('Loading data... done!')
 st.subheader('Raw data')
 st.write(data.tail())
 
+print(data)
 # Plot raw data
+
+# raghav and jasdeep 
 class ScatterGraph:
     def plot_raw_data():
         fig = go.Figure()
@@ -52,15 +61,14 @@ class CandlestickGraph:
                                                         name="Candlestick")])
         fig.update_layout(title_text='Candlestick Chart', xaxis_rangeslider_visible=True)
         st.plotly_chart(fig)
-    
-
-
 
 ScatterGraph.plot_raw_data()
 CandlestickGraph.plot_raw_data()
 
 # Predict forecast with Prophet.
+# Aishmitta and Agam 
 
+#adapter
 class Adapter:
     def __init__(self, date_column='Date', close_column='Close'):
         self.date_column = date_column
@@ -75,6 +83,7 @@ class Adapter:
 adapter = Adapter()
 df_train = adapter.transform_data(data)
 
+#singleton
 m = None;
 
 if (m == None):
@@ -97,3 +106,5 @@ st.plotly_chart(fig1)
 st.write("Forecast components")
 fig2 = m.plot_components(forecast)
 st.write(fig2)
+
+
