@@ -1,5 +1,7 @@
 # Stock_prediction_BItool
-BI tool for stock prediction algorithms 
+•	Used Multiple regression engine(Prophet) to predict stock prices for stocks. 
+•	Represented the data using graphical Charts using Plot.ly library
+•	Deployed it on internet using streamlit 
 
 # How to run code 
 - Create a virtual environment for python ( so you don't have conflicts with priviously installed libraries) - https://www.youtube.com/watch?v=GZbeL5AcTgw
